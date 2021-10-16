@@ -28,6 +28,8 @@ rulesBtn.addEventListener('click', openModal)
 const showPickingScreen = () => {
     const div = document.createElement('div')
     div.classList.add('picking-container')
+    div.setAttribute('data-anime', 'top')
+  
     div.innerHTML = `
         <div data-picking="paper" class="picking picking--paper">
             <div class="picking__img-container">
@@ -45,6 +47,9 @@ const showPickingScreen = () => {
             </div>
         </div>
     `
+
+    setTimeout( () => div.classList.add('animate'), 10)
+
     gameContainer.appendChild(div)
 }
 
@@ -90,7 +95,7 @@ const showResult = result => {
 
     gameContainer.appendChild(resultContainer)
 
-    setTimeout(() => resultContainer.classList.add('result--show'), 10)
+    setTimeout(() => resultContainer.classList.add('result--show'), 20)
 
     const comparisonContainer = document.querySelector('.comparison')
     comparisonContainer.classList.add('comparison--result')

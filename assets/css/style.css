@@ -11,6 +11,13 @@
     --Header-Outline: hsl(217, 16%, 45%);
 }
 
+@keyframes pickingLoading {
+    100% {
+        transform: translate(30rem) skew(-15deg);
+        opacity: 1;
+    }
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -169,8 +176,40 @@ body {
 }
 
 .picking--loading .picking__img-container {
+    position: relative;
     background-color: hsl(223, 46%, 17%);
     box-shadow: 0 0 0 0;
+    overflow: hidden;
+}
+
+.picking--loading .picking__img-container::before {
+    content: '';
+    position: absolute;
+    width: 6rem;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5;
+    filter: blur(3rem);
+    transform: translate(-13rem) skew(-15deg);
+    background: hsla(0, 0%, 100%, 0.5);
+    animation-name: pickingLoading;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+[data-anime] {
+    opacity: 0;
+    transition: .3s;
+}
+
+[data-anime="top"] {
+    transform: translateY(-3rem);
+}
+
+[data-anime].animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* comparison */
@@ -206,6 +245,7 @@ body {
     width: 28rem;
     height: 28rem;
     transform: translateY(0);
+    cursor: default;
 }
 
 .comparison__pick .picking__img-container img {
