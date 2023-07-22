@@ -4,7 +4,7 @@
 
 ## 📄 Descrição
 
-Este projeto é uma solução para o desafio [Rock-Paper-Scissors game]() do site [Frontend Mentor](https://www.frontendmentor.io/) :D
+Este projeto é uma solução para o desafio [Rock-Paper-Scissors game](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH) do site [Frontend Mentor](https://www.frontendmentor.io/) :D
 
 É um simples jogo de Pedra, Papel e Tesoura implementado utilizando HTML, CSS e JavaScript. Permite que os jogadores joguem contra o computador e mantém o controle do placar.
 
